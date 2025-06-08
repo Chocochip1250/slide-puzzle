@@ -75,7 +75,7 @@
         const width = document.querySelector('#width');
         let widthNumber = width.value;
 
-        const puzzle = [];
+        let puzzle = [];
 
         let table = document.createElement('table');
         document.querySelector('#slide-puzzle').appendChild(table);
@@ -94,9 +94,9 @@
         function update() {
 
             table.innerHTML = "";
-            
+
             // test
-            puzzle = [[0,1,2],[3,4,5],[6,7,8]];
+            puzzle = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
 
             puzzle.forEach(row => {
 

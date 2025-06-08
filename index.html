@@ -30,9 +30,10 @@
                     padding: 0;
 
                     button {
-                        width: 40px;
-                        height: 40px;
+                        box-sizing: border-box;
+                        padding: 10px;
                         margin: 0;
+                        font-size: 2em;
                     }
                 }
             }
@@ -70,29 +71,33 @@
         <h1>
             Slide Puzzle
         </h1>
-        <div id="slide-puzzle">
-        </div>
+
+        <div id="slide-puzzle"></div>
+
         <div class="box">
             <span>
                 Width
             </span>
             <input type="number" min="3" max="30" value="3" id="width" class="numberbox-size">
         </div>
+
         <div class="executebutton">
+
             <button id="generate" onclick="generate()">
                 Generate
             </button>
             <button id="reset" onclick="reset()">
                 Reset
             </button>
+            
         </div>
+
     </main>
 
     <!-- JavaScript -->
     <script>
         const width = document.querySelector('#width');
-        let widthNumber = width.value;
-
+        
         // スライドパズルの二次元配列
         let puzzle = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
 
@@ -112,6 +117,7 @@
          * パズル生成
         */
         function generate() {
+            let widthNumber = parseInt(width.value);
 
         }
 
@@ -132,13 +138,18 @@
 
             for (let i = 0; i < puzzle.length; i++) {
 
+                // 行
                 const tr = document.createElement('tr');
 
                 for (let j = 0; j < puzzle[0].length; j++) {
 
+                    // 列
                     const td = document.createElement('td');
+                    // 表セルの中のボタン
                     const button = document.createElement('button');
 
+                    // puzzleの番号を表示
+                    // 0ならば空白
                     if (puzzle[i][j] !== 0) {
                         button.textContent = puzzle[i][j];
                     }
@@ -146,8 +157,9 @@
                     // TODO: 0の周辺ならば
                     if (true) {
 
+                        // 空白と位置を交換可能
                         button.onclick = () => {
-                            move(i, j)
+                            move(i, j);
                         };
 
                     } else {
@@ -170,12 +182,14 @@
         */
         function move(y, x) {
 
+            // 位置を交換
             let temp = puzzle[y][x];
             puzzle[y][x] = puzzle[blankY][blankX];
             puzzle[blankY][blankX] = temp;
             blankY = y;
             blankX = x;
 
+            // 画面更新
             update();
 
             // TODO: 完成していたら

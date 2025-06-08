@@ -21,6 +21,24 @@
             margin: 50px auto;
         }
 
+        #panel {
+            table-layout: fixed;
+            border-collapse: collapse;
+
+            tr {
+                td {
+                    padding: 0;
+
+                    button {
+                        width: max-content;
+                        height: max-content;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+
         .box {
             padding: 0px 20px 20px 20px;
             background-color: rgb(189, 189, 189);
@@ -112,12 +130,10 @@
                         button.textContent = puzzle[i][j];
                     }
 
-                    // TODO:
+                    // TODO: 0の周辺ならば
                     if (false) {
 
-                        button.onclick = () => {
-
-                        };
+                        button.onclick = move(i, j);
 
                     } else {
                         //button.disabled = true;
@@ -132,6 +148,10 @@
 
             }
 
+        }
+
+        function move(y, x) {
+            let temp;
         }
     </script>
 </body>

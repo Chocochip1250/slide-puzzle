@@ -26,7 +26,7 @@
             margin: 0 auto;
         }
 
-        .slide-puzzle {
+        #slide-puzzle {
             background-color: black;
             padding: 20px;
             width: fit-content;
@@ -52,7 +52,7 @@
         <h1>
             Slide Puzzle
         </h1>
-        <div class="slide-puzzle">
+        <div id="slide-puzzle">
         </div>
         <div class="box">
             <span>
@@ -74,17 +74,48 @@
     <script>
         const width = document.querySelector('#width');
         let widthNumber = width.value;
+
         const puzzle = [];
-        const table = document.createElement('table');
+
+        let table = document.createElement('table');
+        document.querySelector('#id').appendChild(table);
+
         function generate() {
 
         }
+
         function reset() {
 
         }
+
         function update() {
+
+            table.innerHTML = "";
+
             puzzle.forEach(row => {
-            const tr=document.createElement('tr');                
+
+                const tr = document.createElement('tr');
+
+                row.forEach(col => {
+
+                    const td = document.createElement('td');
+                    const button = document.createElement('button');
+                    button.textContent = col;
+
+                    // TODO:
+                    if (false) {
+
+                    } else {
+                        button.disabled = true;
+                    }
+
+                    td.appendChild(button);
+                    tr.appendChild(td);
+
+                });
+
+                table.appendChild(tr);
+
             });
         }
     </script>

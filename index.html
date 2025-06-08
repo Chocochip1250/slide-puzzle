@@ -61,7 +61,7 @@
             gap: 50px;
         }
 
-        .executebutton > button {
+        .executebutton>button {
             font-size: 1.3em;
         }
     </style>
@@ -117,6 +117,7 @@
 
         /**
          * パズル生成
+         * 不可能パターンに注意して生成
         */
         function generate() {
             let widthNumber = parseInt(width.value);
@@ -152,7 +153,9 @@
 
                     // puzzleの番号を表示
                     // 0ならば空白
-                    if (puzzle[i][j] !== 0) {
+                    if (puzzle[i][j] === 0) {
+                        button.style.backgroundColor = '#808080';
+                    } else {
                         button.textContent = puzzle[i][j];
                     }
 

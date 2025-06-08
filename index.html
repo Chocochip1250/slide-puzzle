@@ -146,7 +146,9 @@
                     // TODO: 0の周辺ならば
                     if (true) {
 
-                        button.onclick = move(i, j);
+                        button.onclick = () => {
+                            move(i, j)
+                        };
 
                     } else {
                         //button.disabled = true;

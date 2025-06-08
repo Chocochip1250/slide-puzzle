@@ -93,29 +93,42 @@
         const width = document.querySelector('#width');
         let widthNumber = width.value;
 
-        let puzzle = [];
+        // スライドパズルの二次元配列
+        let puzzle = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
 
+        // パズルの空白0の座標
+        let blankY = 0;
+        let blankX = 0;
+
+        // パズルを表示する<table>
         let table = document.createElement('table');
         table.id = "panel";
         document.querySelector('#slide-puzzle').appendChild(table);
-        // test
+
+        // 初期表示
         update();
 
+        /**
+         * パズル生成
+        */
         function generate() {
 
         }
 
+        /**
+         * パズル消去
+        */
         function reset() {
             puzzle = [];
             table.innerHTML = "";
         }
 
+        /**
+         * パズルを画面に表示
+        */
         function update() {
 
             table.innerHTML = "";
-
-            // test
-            puzzle = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
 
             for (let i = 0; i < puzzle.length; i++) {
 
@@ -131,7 +144,7 @@
                     }
 
                     // TODO: 0の周辺ならば
-                    if (false) {
+                    if (true) {
 
                         button.onclick = move(i, j);
 
@@ -150,8 +163,23 @@
 
         }
 
+        /**
+         * パズルを動かす
+        */
         function move(y, x) {
-            let temp;
+
+            let temp = puzzle[y][x];
+            puzzle[y][x] = puzzle[blankY][blankX];
+            puzzle[blankY][blankX] = temp;
+            blankY = y;
+            blankX = x;
+
+            update();
+
+            // TODO: 完成していたら
+            if (false) {
+                // 完成時の処理
+            }
         }
     </script>
 </body>

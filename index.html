@@ -25,19 +25,22 @@
             display: block;
             margin: 0 auto;
         }
-        .slide-puzzle{
+
+        .slide-puzzle {
             background-color: black;
             padding: 20px;
             width: fit-content;
             margin: 50px auto;
         }
-        .executebutton{
+
+        .executebutton {
             display: flex;
             margin: 30px auto;
             justify-content: center;
             gap: 50px;
         }
-        .executebutton >button{
+
+        .executebutton>button {
             font-size: 1.3em;
         }
     </style>
@@ -58,10 +61,10 @@
             <input type="number" min="3" max="30" value="3" id="width" class="numberbox-size">
         </div>
         <div class="executebutton">
-            <button id="generate">
+            <button id="generate" onclick="generate()">
                 Generate
             </button>
-            <button id="reset">
+            <button id="reset" onclick="reset()">
                 Reset
             </button>
         </div>
@@ -71,6 +74,19 @@
     <script>
         const width = document.querySelector('#width');
         let widthNumber = width.value;
+        const puzzle = [];
+        const table = document.createElement('table');
+        function generate() {
+
+        }
+        function reset() {
+
+        }
+        function update() {
+            puzzle.forEach(row => {
+            const tr=document.createElement('tr');                
+            });
+        }
     </script>
 </body>
 

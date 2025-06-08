@@ -9,18 +9,20 @@
 
     <!-- CSS -->
     <style>
-        h1{
+        h1 {
             text-align: center;
             font-size: 60px;
         }
-        .box{
-            padding: 20px;
-            background-color: gray;
+
+        .box {
+            padding: 0px 20px 20px 20px;
+            background-color: rgb(189, 189, 189);
             width: fit-content;
             margin: 500px auto;
         }
-        .numberbox-size{
-            display:block;
+
+        .numberbox-size {
+            display: block;
             margin: 0 auto;
         }
     </style>
@@ -28,14 +30,17 @@
 
 <body>
 
-        <main>
-            <h1>
-                Slide Puzzle
-            </h1>
-            <div class="box">
-                <input type="number" min="3" max="30" value="3" id="size" class="numberbox-size">
-            </div>
-        </main>
+    <main>
+        <h1>
+            Slide Puzzle
+        </h1>
+        <div class="box">
+            <span>
+                Width
+            </span>
+            <input type="number" min="3" max="30" value="3" id="size" class="numberbox-size">
+        </div>
+    </main>
 
     <!-- JavaScript -->
     <script>

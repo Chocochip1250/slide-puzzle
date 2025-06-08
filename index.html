@@ -18,12 +18,27 @@
             padding: 0px 20px 20px 20px;
             background-color: rgb(189, 189, 189);
             width: fit-content;
-            margin: 500px auto;
+            margin: 50px auto;
         }
 
         .numberbox-size {
             display: block;
             margin: 0 auto;
+        }
+        .slide-puzzle{
+            background-color: black;
+            padding: 20px;
+            width: fit-content;
+            margin: 50px auto;
+        }
+        .executebutton{
+            display: flex;
+            margin: 30px auto;
+            justify-content: center;
+            gap: 50px;
+        }
+        .executebutton >button{
+            font-size: 1.3em;
         }
     </style>
 </head>
@@ -34,11 +49,21 @@
         <h1>
             Slide Puzzle
         </h1>
+        <div class="slide-puzzle">
+        </div>
         <div class="box">
             <span>
                 Width
             </span>
             <input type="number" min="3" max="30" value="3" id="width" class="numberbox-size">
+        </div>
+        <div class="executebutton">
+            <button id="generate">
+                Generate
+            </button>
+            <button id="reset">
+                Reset
+            </button>
         </div>
     </main>
 

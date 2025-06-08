@@ -47,9 +47,11 @@
             margin: 50px auto;
         }
 
-        .numberbox-size {
+        .numberbox-width {
             display: block;
             margin: 0 auto;
+            text-align: center;
+            font-size: 1.5em;
         }
 
         .executebutton {
@@ -59,7 +61,7 @@
             gap: 50px;
         }
 
-        .executebutton>button {
+        .executebutton > button {
             font-size: 1.3em;
         }
     </style>
@@ -78,7 +80,7 @@
             <span>
                 Width
             </span>
-            <input type="number" min="3" max="30" value="3" id="width" class="numberbox-size">
+            <input type="number" min="3" max="30" value="3" id="width" class="numberbox-width">
         </div>
 
         <div class="executebutton">
@@ -89,7 +91,7 @@
             <button id="reset" onclick="reset()">
                 Reset
             </button>
-            
+
         </div>
 
     </main>
@@ -97,7 +99,7 @@
     <!-- JavaScript -->
     <script>
         const width = document.querySelector('#width');
-        
+
         // スライドパズルの二次元配列
         let puzzle = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
 
